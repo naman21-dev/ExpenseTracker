@@ -34,7 +34,7 @@ const API_BASE = 'https://xpensy.onrender.com/api'
 
 const getAuthHeader = () => {
   const token = localStorage.getItem("token") || localStorage.getItem("authToken");
-  return token ? { Authorization: `Bearer ${token} ` } : {};
+  return token ? { Authorization: `Bearer ${token}` } : {};
 };
 
 //to convert date to ISO time
