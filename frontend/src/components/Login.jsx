@@ -23,7 +23,7 @@ const Login = ({ onLogin, API_URL = 'https://xpensy.onrender.com' }) => {
   };
 
   const persistAuth = (profile, token) => {
-    const storage = remember ? localStorage : sessionStorage;
+    const storage = localStorage;
     try{
     if (profile) storage.setItem('user', JSON.stringify(profile));
     if (token) storage.setItem('token', token);
