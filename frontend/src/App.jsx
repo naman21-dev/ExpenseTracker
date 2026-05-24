@@ -54,23 +54,16 @@ const App = () => {
   //to save the token
   const persistAuth = (userObj, tokenStr, remember = false) => {
     try {
-      if (remember) {
-        if (userObj) localStorage.setItem("user", JSON.stringify(userObj));
-        if (tokenStr) localStorage.setItem("token", tokenStr);
-        sessionStorage.removeItem("user");
-        sessionStorage.removeItem("token");
-      } else {
-        if (userObj) sessionStorage.setItem("user", JSON.stringify(userObj));
-        if (tokenStr) sessionStorage.setItem("token", tokenStr);
-        localStorage.removeItem("user");
-        localStorage.removeItem("token");
-      }
+      if (userObj) localStorage.setItem("user", JSON.stringify(userObj));
+      if (tokenStr) localStorage.setItem("token", tokenStr);
+      sessionStorage.removeItem("user");
+      sessionStorage.removeItem("token");
       setUser(userObj || null);
       setToken(tokenStr || null);
     } catch (err) {
       console.error("persistAuth error:", err);
     }
-  };
+};
 
   const clearAuth = () => {
     try {
